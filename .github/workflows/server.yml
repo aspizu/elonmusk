@@ -28,5 +28,5 @@ jobs:
       
       - uses: py-actions/flake8@v2.2.1
         with:
-          ignore: ""
+          # ignore: ""
           max-line-length: "88"
