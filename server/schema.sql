@@ -51,5 +51,5 @@ CREATE TABLE comment_likes (
   is_like    BOOLEAN NOT NULL,
   UNIQUE (comment_id, user_id),
   FOREIGN KEY(user_id) REFERENCES users(id),
-  FOREIGN KEY(comment_id) REFERENCES comment(id)
+  FOREIGN KEY(comment_id) REFERENCES comments(id)
 );
