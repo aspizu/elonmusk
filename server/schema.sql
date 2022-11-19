@@ -5,6 +5,7 @@ CREATE TABLE users (
   password TEXT    NOT NULL,
   bio      TEXT    NOT NULL,
   pfp      TEXT    NOT NULL,
+  time     INTEGER NOT NULL,
   role     INTEGER NOT NULL
 );
 
@@ -13,6 +14,7 @@ CREATE TABLE posts (
   user_id INTEGER NOT NULL,
   body    TEXT    NOT NULL,
   time    INTEGER NOT NULL,
+  visible BOOLEAN NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
@@ -40,6 +42,7 @@ CREATE TABLE comments (
   post_id INTEGER NOT NULL,
   body    TEXT    NOT NULL,
   time    INTEGER NOT NULL,
+  visible BOOLEAN NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users(id),
   FOREIGN KEY(post_id) REFERENCES posts(id)
 );
