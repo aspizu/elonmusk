@@ -39,7 +39,7 @@ CREATE TABLE comments (
   user_id INT  NOT NULL,
   post_id INT  NOT NULL,
   body    TEXT NOT NULL,
-  time    INT  NOT NULL
+  time    INT  NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users(id),
   FOREIGN KEY(post_id) REFERENCES posts(id)
 );

@@ -11,6 +11,11 @@ def hello_world():
     return "<h1>Hello, World!</h1>"
 
 
+@app.post("/register")
+def post_register():
+    return ""
+
+
 def main():
     app.run()
     con.commit()
