@@ -1,9 +1,11 @@
 import sqlite3
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 DB = "1.db"
 app = Flask(__name__)
+CORS(app)
 
 
 @app.get("/")
@@ -62,6 +64,15 @@ def get_comment(comment_id: int):
             "time": a[4],
         }
     )
+
+
+@app.post("/register")
+def register():
+    # if user exists
+    #    error
+    # create user
+    # return success
+    ...
 
 
 def main():
