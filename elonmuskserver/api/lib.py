@@ -4,7 +4,7 @@ from flask import jsonify
 
 
 def response_success(**kwargs: Any):
-    return jsonify({"success": True, "exception": None, **kwargs})
+    return jsonify({"success": True, **kwargs})
 
 
 def response_failure(exception: str, **kwargs: Any):
