@@ -3,7 +3,8 @@ import sqlite3
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-DB = "1.db"
+DB = "1.db"  # Path to database
+
 app = Flask(__name__)
 CORS(app)
 
@@ -19,7 +20,7 @@ def get_user(user_id: int):
     cur = con.cursor()
     cur.execute("SELECT * FROM users WHERE id = ?", [user_id])
     a = cur.fetchone()
-    if a is None or a[7] < 0:
+    if a is None or a[7] < 0:  # see /schema.sql:9
         return jsonify({"error": "notfound"})
     return jsonify(
         {
