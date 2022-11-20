@@ -9,6 +9,15 @@ CREATE TABLE users (
   role     INTEGER NOT NULL
 );
 
+CREATE TABLE followers (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  follower_id INTEGER NOT NULL,
+  user_id     INTEGER NOT NULL,
+  FOREIGN KEY(follower_id) REFERENCES users(id),
+  FOREIGN KEY(user_id) REFERENCES users(id),
+  UNIQUE (follower_id, user_id)
+);
+
 CREATE TABLE posts (
   id      INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER NOT NULL,
