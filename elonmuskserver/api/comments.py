@@ -84,8 +84,6 @@ def unlike_comment():
 
 @app.get("/get_comment_like_count/<int:comment_id>")
 def get_comment_like_count(comment_id: int):
-    if not request.json:
-        raise Exception
     con = sqlite3.connect(DB)
     cur = con.cursor()
     cur.execute(
@@ -98,8 +96,6 @@ def get_comment_like_count(comment_id: int):
 
 @app.get("/get_comment_dislike_count/<int:comment_id>")
 def get_comment_dislike_count(comment_id: int):
-    if not request.json:
-        raise Exception
     con = sqlite3.connect(DB)
     cur = con.cursor()
     cur.execute(
