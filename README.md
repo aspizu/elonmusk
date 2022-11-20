@@ -41,4 +41,4 @@ Microblogging service similar to Twitter
 
 **Run development server**
 
-`python server`
+`python -m elonmuskserver`

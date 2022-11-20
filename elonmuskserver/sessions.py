@@ -12,3 +12,7 @@ class Sessions:
 
     def get(self, token: int) -> int:
         return self.sessions[token]
+
+
+def hash_password(password: str) -> str:
+    return password
