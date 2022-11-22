@@ -1,4 +1,4 @@
-create table users {
+create table users (
   id       integer primary key autoincrement,
   username text not null unique,
   email    text not null,
@@ -7,7 +7,7 @@ create table users {
   bio      text not null,
   time     integer not null,
   rank     integer not null
-};
+);
 
 
 create table followers (
