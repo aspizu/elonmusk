@@ -1,5 +1,5 @@
 create table users (
-  id       integer primary key autoincrement,
+  id       integer primary key autoincrement, 
   username text not null unique,
   email    text not null,
   password text not null,
@@ -58,3 +58,13 @@ create table comment_likes (
   foreign key(user_id) references users(id),
   foreign key(comment_id) references comments(id)
 );
+
+
+create table transactions (
+  id      integer primary key autoincrement,
+  from_id integer not null,
+  to_id   integer not null,
+  amount integer not null,
+  foreign key(from_id) references users(id),
+  foreign key(to_id) references users(id)
+)
