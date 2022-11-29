@@ -24,6 +24,7 @@ create table posts (
   id      integer primary key autoincrement,
   user_id integer not null,
   body    text not null,
+  likes   integer not null default 0,
   time    integer not null,
   foreign key(user_id) references users(id)
 );
@@ -44,6 +45,7 @@ create table comments (
   user_id integer not null,
   post_id integer not null,
   body    text not null,
+  likes   integer not null default 0,
   time    integer not null,
   foreign key(user_id) references users(id),
   foreign key(post_id) references posts(id)
@@ -61,10 +63,10 @@ create table comment_likes (
 
 
 create table transactions (
-  id      integer primary key autoincrement,
-  from_id integer not null,
-  to_id   integer not null,
-  amount integer not null,
+  id       integer primary key autoincrement,
+  from_id  integer not null,
+  to_id    integer not null,
+  amount   integer not null,
   foreign key(from_id) references users(id),
   foreign key(to_id) references users(id)
 )
