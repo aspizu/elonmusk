@@ -99,7 +99,7 @@ async def register(user: register_user_T):
     return success()
 
 
-class login_creds_T:
+class login_creds_T(BaseModel):
     username: str
     password: str
 
@@ -119,7 +119,7 @@ async def login(creds: login_creds_T):
     return success(token=session.token)
 
 
-class update_user_data_T:
+class update_user_data_T(BaseModel):
     email: Optional[str]
     avatar: Optional[str]
     bio: Optional[str]
